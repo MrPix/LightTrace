@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\LightTrace.UI\LightTrace.UI.csproj" />
+    <ProjectReference Include="..\LightTrace.UI\LightTrace.UI.csproj" />
     <ProjectReference Include="..\LightTrace\LightTrace.csproj" />
   </ItemGroup>
 
