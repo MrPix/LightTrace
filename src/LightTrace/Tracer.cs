@@ -41,6 +41,8 @@ public sealed class Tracer : IDisposable
 
     public static TraceEntrySnapshots GetTraceEntries() => RootTraceEntries.GetTraceSnapshot();
 
+    public static void Reset() => RootTraceEntries.Clear();
+
     private static TraceEntry GetOrCreateCurrentTraceEntry(string name)
     {
         TraceEntries parentTraceEntries = TraceEntryStack.PeekOrDefault()?.TraceEntries ?? RootTraceEntries;
@@ -70,6 +72,5 @@ public sealed class Tracer : IDisposable
                                 Ticks = Interlocked.Read(ref o.Value.Ticks), // 64 bit read isn't atomic
                                 TraceEntries = o.Value.TraceEntries.GetTraceSnapshot()
                             }));
-
     }
 }
